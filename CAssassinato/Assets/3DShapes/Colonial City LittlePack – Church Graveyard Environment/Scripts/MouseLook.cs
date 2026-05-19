@@ -10,7 +10,7 @@ public class MouseLook : MonoBehaviour
     [SerializeField] Transform playerB; //serve pro corpo do personagem girar junto com a camera
     private float xRotation = 0; //guarda o quanto o player olhou pra cima ou pra baixo
     private InputAction lookAction; //guarda a action look
-    public InputActionAsset InputActions;
+    [SerializeField] InputActionAsset InputActions;
 
     void Start()
     {

@@ -5,12 +5,12 @@ public class Luz : MonoBehaviour
 {
 
     // Arraste o seu Spot e seu Point light para esta lista no Inspector
-    public List<Light> luzesDoObjeto = new List<Light>(); 
-    public float distanciaParaAtivar = 10f; 
-    public float duracaoDoPisca = 2.5f; // Quanto tempo (em segundos) o susto vai durar
-    public float tempoMinimoItem = 0.05f;
-    public float tempoMaximoItem = 0.2f;
-    public bool apagarNoFinal = false;
+    [SerializeField] List<Light> luzesDoObjeto = new List<Light>(); 
+    [SerializeField] float distanciaParaAtivar = 10f; 
+    [SerializeField] float duracaoDoPisca = 2.5f; // Quanto tempo (em segundos) o susto vai durar
+    [SerializeField] float tempoMinimoItem = 0.05f;
+    [SerializeField] float tempoMaximoItem = 0.2f;
+    [SerializeField] bool apagarNoFinal = false;
 
     private Transform player;
     private bool jaPiscou = false;

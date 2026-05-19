@@ -1,13 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class livro : MonoBehaviour
 {
-    public Transform mascara;          // Arraste a Máscara aqui
-    public float velocidadeMover = 2f;  // Velocidade de subida e descida
-    public float alturaMaxima = 3f;     // Quantos metros ela vai subir
-    public float tempoNoAlto = 2f;      // Quanto tempo ela fica flutuando antes de descer
-    public float distanciaParaInteragir = 3f; 
-    public GameObject textoInteracao;   
+    [SerializeField] Transform mascara;          // Arraste a Máscara aqui
+    [SerializeField] float velocidadeMover = 2f;  // Velocidade de subida e descida
+    [SerializeField] float alturaMaxima = 3f;     // Quantos metros ela vai subir
+    [SerializeField] float tempoNoAlto = 1f;      // Quanto tempo ela fica flutuando antes de descer
+    [SerializeField] float distanciaParaInteragir = 3f; 
+    [SerializeField] GameObject textoInteracao;   
     
     private Transform player;
     private bool jaInteragiu = false;
@@ -87,7 +88,7 @@ public class livro : MonoBehaviour
         }
 
         // 4. Permite interagir de novo se o jogador quiser
-        jaInteragiu = false; 
+        //jaInteragiu = false; 
     }
 
     // Desenha uma esfera azul no editor para você ver o alcance do clique

@@ -12813,28 +12813,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3588064661786098985, guid: eb0f0b6b32ad7d34fa85e9dcfa9f46e2, type: 3}
   m_PrefabInstance: {fileID: 1018820288}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1021030555 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 656c6205d5fab2748ae9380874fe5345, type: 3}
-  m_PrefabInstance: {fileID: 1179114608}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1021030558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 656c6205d5fab2748ae9380874fe5345, type: 3}
   m_PrefabInstance: {fileID: 1179114608}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1021030559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021030555}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff35751c062d594782dafdece8d9e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Lua
 --- !u!1 &1051036408
 GameObject:
   m_ObjectHideFlags: 0
@@ -14611,10 +14594,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 656c6205d5fab2748ae9380874fe5345, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1921236869}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 656c6205d5fab2748ae9380874fe5345, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1021030559}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656c6205d5fab2748ae9380874fe5345, type: 3}
 --- !u!1001 &1194953112
 PrefabInstance:
@@ -16978,6 +16958,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5187413595332696913, guid: 6e360a62acd35c9449183c1bd5504098, type: 3}
   m_PrefabInstance: {fileID: 1387504060}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1395022003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395022004}
+  m_Layer: 0
+  m_Name: AreaParaDialogo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395022004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395022003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.04255, y: 0.488, z: -15.189}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1401856318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22540,10 +22551,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::livro
   mascara: {fileID: 1114002370}
-  velocidadeMover: 2
-  alturaMaxima: 3
-  tempoNoAlto: 2
-  distanciaParaInteragir: 0.4
+  velocidadeMover: 3
+  alturaMaxima: 2
+  tempoNoAlto: 0.5
+  distanciaParaInteragir: 0.5
   textoInteracao: {fileID: 228412639}
 --- !u!4 &1915292253 stripped
 Transform:
@@ -25549,3 +25560,4 @@ SceneRoots:
   - {fileID: 1348327059}
   - {fileID: 243182415}
   - {fileID: 195741435}
+  - {fileID: 1395022004}
