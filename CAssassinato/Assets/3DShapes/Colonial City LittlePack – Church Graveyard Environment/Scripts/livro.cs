@@ -7,65 +7,25 @@ public class livro : MonoBehaviour
     [SerializeField] float velocidadeMover = 2f;  // Velocidade de subida e descida
     [SerializeField] float alturaMaxima = 3f;     // Quantos metros ela vai subir
     [SerializeField] float tempoNoAlto = 1f;      // Quanto tempo ela fica flutuando antes de descer
-    [SerializeField] float distanciaParaInteragir = 3f; 
-    [SerializeField] GameObject textoInteracao;   
-    
-    private Transform player;
-    private bool jaInteragiu = false;
-    private bool podeInteragir = false;
+
     
     private Vector3 posicaoInicial;
     private Vector3 posicaoAlvo;
 
     void Start()
     {
-        // Encontra o jogador automaticamente pela Tag
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null) player = playerObj.transform;
-
-        // Guarda a posição final da máscara
+        // Guarda as posições iniciais e finais baseadas na posição atual do objeto
         if (mascara != null)
         {
             posicaoInicial = mascara.position;
             posicaoAlvo = mascara.position + Vector3.up * alturaMaxima;
         }
-        
-        // Garante que o texto comece desligado
-        if (textoInteracao != null) textoInteracao.SetActive(false);
     }
 
-    void Update()
+    // FUNÇÃO PÚBLICA: É essa função que o outro script vai chamar para dar o "play"
+    public void AtivarFlutuarMascara()
     {
-        if (player == null || jaInteragiu) return;
-
-        float distancia = Vector3.Distance(transform.position, player.position);
-
-        if (distancia <= distanciaParaInteragir)
-        {
-            if (!podeInteragir)
-            {
-                podeInteragir = true;
-                if (textoInteracao != null) textoInteracao.SetActive(true);
-            }
-
-            if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
-            {
-                jaInteragiu = true;
-                podeInteragir = false;
-                if (textoInteracao != null) textoInteracao.SetActive(false);
-                
-                // Inicia a sequência de flutuar e voltar
-                StartCoroutine(SequenciaFlutuar());
-            }
-        }
-        else
-        {
-            if (podeInteragir)
-            {
-                podeInteragir = false;
-                if (textoInteracao != null) textoInteracao.SetActive(false);
-            }
-        }
+        StartCoroutine(SequenciaFlutuar());
     }
 
     System.Collections.IEnumerator SequenciaFlutuar()
@@ -86,15 +46,5 @@ public class livro : MonoBehaviour
             mascara.position = Vector3.MoveTowards(mascara.position, posicaoInicial, velocidadeMover * Time.deltaTime);
             yield return null;
         }
-
-        // 4. Permite interagir de novo se o jogador quiser
-        //jaInteragiu = false; 
-    }
-
-    // Desenha uma esfera azul no editor para você ver o alcance do clique
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, distanciaParaInteragir);
     }
 }
